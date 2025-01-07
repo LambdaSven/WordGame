@@ -1,0 +1,4 @@
+(executable
+ (public_name WordGame)
+ (name main)
+ (libraries WordGame))
