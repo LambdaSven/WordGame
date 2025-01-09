@@ -1,2 +1,3 @@
 (library
- (name WordGame))
+ (name WordGame)
+ (libraries sqlite3 dream tyxml))
