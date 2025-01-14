@@ -1,3 +1,4 @@
 (library
  (name WordGame)
- (libraries sqlite3 dream tyxml))
+ (libraries sqlite3 dream tyxml)
+ (preprocess (pps lwt_ppx)))

@@ -16,3 +16,5 @@ let () = print_endline @@ string_of_bool @@ WordGame.Game.validate_word "Test Wo
 let () = print_endline @@ string_of_bool @@ WordGame.Game.validate_word "The" 3 "English"
 let () = print_endline @@ string_of_bool @@ WordGame.Game.validate_word "A" 3 "English"
 let () = print_endline @@ string_of_bool @@ WordGame.Game.validate_word "Test" 3 "English"
+
+let () = WordGame.Webserver.run 
