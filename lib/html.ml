@@ -5,11 +5,11 @@ let title = title (txt "Stephen's Super Cool Word Game")
 let word_input id = input 
   ~a:[
     a_input_type `Text;
-    a_class ["form_control"];
     a_name "word_input";
     Unsafe.string_attrib "hx-post" ("/" ^ id ^ "/add_word");
-    Unsafe.string_attrib "#hx-target" "word-list";
+    Unsafe.string_attrib "hx-target" "#word-list";
     Unsafe.string_attrib "hx-trigger" "keyup[key=='Enter']";
+    Unsafe.string_attrib "hx-swap" "beforeend";
   ] ()
 
 let word_list words = List.map (
@@ -17,7 +17,7 @@ let word_list words = List.map (
 ) words
 
 let word_container words = div
-  ~a:[a_id "word-list"; Unsafe.string_attrib "hx-swap" "prependBefore"]
+  ~a:[a_id "word-list"; Unsafe.string_attrib "hx-swap" "beforeend"]
   (word_list words)
 
 let head = head title [script ~a:[a_src "https://unpkg.com/htmx.org@2.0.4"] (txt "")] 
